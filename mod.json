@@ -1,0 +1,68 @@
+{
+	"geode": "5.10.1",
+	"gd": {
+		"win": "2.2081"
+	},
+	"id": "chase.real-pathfinder",
+	"name": "Real Pathfinder",
+	"version": "v1.0.0",
+	"developer": "Chase",
+	"description": "Finds a route through any classic level using the game's real physics, then exports a verified macro.",
+	"tags": ["gameplay", "utility", "offline"],
+	"settings": {
+		"restore-mode": {
+			"type": "string",
+			"name": "Checkpoint Restore",
+			"description": "Direct is faster. Practice-style resets the whole level before loading a checkpoint (like a practice respawn), which is more accurate on trigger-heavy levels. Try it if the pathfinder shows many repairs.",
+			"default": "Direct (faster)",
+			"one-of": ["Direct (faster)", "Practice-style (accurate)"]
+		},
+		"work-ms": {
+			"type": "int",
+			"name": "Work Per Frame (ms)",
+			"description": "How long the search runs each frame. Higher = faster search, less responsive game.",
+			"default": 30,
+			"min": 4,
+			"max": 200
+		},
+		"checkpoint-interval": {
+			"type": "int",
+			"name": "Checkpoint Interval (ticks)",
+			"description": "Physics ticks between saved states on a branch. Lower = faster search, more memory.",
+			"default": 30,
+			"min": 4,
+			"max": 480
+		},
+		"max-checkpoints": {
+			"type": "int",
+			"name": "Max Checkpoints In Memory",
+			"description": "Lower this if the game runs out of memory on huge levels.",
+			"default": 800,
+			"min": 50,
+			"max": 20000
+		},
+		"max-branches": {
+			"type": "int",
+			"name": "Max Branches",
+			"description": "The search gives up after trying this many branches.",
+			"default": 3000000,
+			"min": 1000,
+			"max": 100000000
+		},
+		"repair-seconds": {
+			"type": "int",
+			"name": "Repair Zone (seconds)",
+			"description": "If the clean replay dies, this much level time before the death is searched again in exact mode.",
+			"default": 2,
+			"min": 1,
+			"max": 30
+		},
+		"max-level-minutes": {
+			"type": "int",
+			"name": "Max Level Length (minutes)",
+			"default": 30,
+			"min": 1,
+			"max": 360
+		}
+	}
+}
